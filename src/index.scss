@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@400;700&family=Roboto&display=swap");
+body {
+	background-color: #f0f0f0;
+}
+.board {
+	display: flex;
+	margin: 0 auto;
+	max-width: 1200px;
+	border-radius: 3px dashed red;
+}
+
+.column {
+	width: 274px;
+	margin: 0 8px;
+	border: 1px solid #c9d2ce;
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px 3px 0px 0px;
+	min-height: 300px;
+	background: no-repeat url("./assets/icons/addFiles.svg") center;
+}
+
+.task-list {
+	padding: 8px;
+	transition: background-color 0.2s ease;
+	flex-grow: 1;
+	min-height: 100px;
+}
+
+.column-title {
+	padding: 8px 0;
+	display: flex;
+	justify-content: center;
+	background: #f2faf6;
+	border-bottom: 1px solid #c9d2ce;
+}
+
+.task {
+	padding: 8px;
+	margin-bottom: 8px;
+	background-color: white;
+	border-radius: 3px;
+	// box-shadow: 0 1px 1px rgba(9, 45, 66, 0.25);
+}
+
+.task:hover {
+	cursor: pointer;
+	background-color: #f7f7f7;
+}
+
+.task.dragging {
+	opacity: 0.5;
+}
+/* --------------------- */
+
+.status1 {
+	color: #856ec6;
+	background-color: #f6f2ff;
+}
+
+.status2 {
+	color: #0095f2;
+	background-color: #f0f9ff;
+}
+
+.status3 {
+	color: #f33b5c;
+	background-color: #fff2f5;
+}
+
+.job-item {
+	box-shadow: 0px 3px 3px rgb(179, 173, 173);
+	border-radius: 4px;
+	margin-bottom: 10px;
+	background-color: white;
+
+	&.dragging {
+		opacity: 0.5;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1rem;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	&__more-button {
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		outline-color: transparent;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 0.875rem;
+		display: flex;
+		flex-direction: column;
+
+		&-text {
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 0.2rem;
+	}
+
+	&__department {
+		color: #718096;
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	&__status {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 13px;
+		// width: 99px;
+		// height: 24px;
+		padding: 6px 8px;
+		border-radius: 4px;
+	}
+
+	&__recruiter {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+
+		&-info {
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			gap: 0.2rem;
+		}
+
+		&-role {
+			padding: 0;
+			margin: 0;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 11px;
+			line-height: 13px;
+
+			/* BW/40 */
+
+			color: #969f9b;
+		}
+
+		&-avatar {
+			width: 1.75rem;
+			height: 1.75rem;
+			border-radius: 50%;
+			border: 1px solid #e2e8f0;
+		}
+
+		&-name {
+			padding: 0;
+			margin: 0;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 14px;
+			/* identical to box height */
+
+			/* BW/80 */
+
+			color: #414644;
+		}
+	}
+	&__vacancies {
+		display: flex;
+		gap: 4px;
+    padding: 4px;
+		align-items: center;
+		background: #fafffc;
+		border: 1px solid #ebf3ef;
+		border-radius: 4px;
+
+		&-count {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 11px;
+			line-height: 13px;
+			/* identical to box height */
+
+			/* BW/80 */
+
+			color: #414644;
+		}
+
+		&-icon {
+			width: 12px;
+			height: 12px;
+			align-items: center;
+		}
+	}
+}
